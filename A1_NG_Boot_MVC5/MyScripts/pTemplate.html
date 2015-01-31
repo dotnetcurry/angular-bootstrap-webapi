@@ -1,0 +1,130 @@
+﻿<form class="form-horizontal" role="form">
+    <fieldset>
+        <legend>Person Basic Info</legend>
+        <div class="form-group">
+           
+            <label for="personId" class="col-sm-3 control-label">Person Id</label>
+            <div class="col-sm-9">
+                <input type="text" id="personId" name="personId"
+                       ng-model="PersonId" class="form-control" readonly="readonly" />
+            </div>
+            <label for="title" class="col-sm-3 control-label">Person Id</label>
+            <div class="col-sm-9">
+                <select id="title" name="title" class="form-control"
+                        ng-model="selectedtitle"
+                        ng-options="t for t in title"></select>
+            </div>
+
+            <label for="firstName" class="col-sm-3 control-label">First Name</label>
+            <div class="col-sm-9">
+                <input type="text" id="firstName" name="firstName"
+                       ng-model="FirstName" class="form-control" />
+            </div>
+            <label for="middleName" class="col-sm-3 control-label">Middle Name</label>
+            <div class="col-sm-9">
+                <input type="text" id="middleName" name="middleName"
+                       ng-model="MiddleName" class="form-control" />
+            </div>
+            <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+            <div class="col-sm-9">
+                <input type="text" id="lastName" name="lastName"
+                       ng-model="LastName" class="form-control" />
+            </div>
+
+            <label for="gender" class="col-sm-3 control-label">Gender</label>
+            <div class="col-sm-9">
+                <select id="gender" name="gender" class="form-control"
+                        ng-model="selectedGender"
+                        ng-options="g for g in gender"></select>
+            </div>
+
+            <label for="birthdate" class="col-sm-3 control-label">Birth Date</label>
+            <div class="col-sm-9">
+               <!-- <input type="text" id="birthdate" name="birthdate"
+                         ng-model="BirthName" class="form-control" />-->
+                <input type="text" class="form-control"
+                       datepicker-popup="dd/mm/yyyy"
+                       ng-model="BirthDate" is-open="opened"
+                      
+                       close-text="Close"
+                       />
+            </div>
+            <!--<label for="age" class="col-sm-3 control-label">Age</label>
+              <div class="col-sm-9">
+                  <input type="text" ng-model="Age" id="age" ng-blur="getAge()"
+                         class="form-control" readonly="readonly"/>
+              </div>-->
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Address Information :</legend>
+        <div class="form-group">
+            <label for="currentaddress" class="col-sm-3 control-label">Current Address</label>
+            <div class="col-sm-9">
+                <textarea id="currentaddress" name="currentaddress"
+                          ng-model="CurrentAddress" class="form-control"></textarea>
+            </div>
+
+            <label for="issameaddress" class="col-sm-3 control-label">Check is Same Address:</label>
+            <div class="col-sm-9">
+                <input type="checkbox" id="issameaddress"
+                       name="issameaddress" ng-model="IsSameAddress"
+                       class="form-control"
+                       ng-change="SameAddress()" />
+            </div>
+            <label for="permanentaddress" class="col-sm-3 control-label">Permanent Address</label>
+            <div class="col-sm-9">
+                <textarea id="permanentaddress" name="permanentaddress"
+                          ng-model="PermanentAddress" class="form-control"
+                          ng-disabled="DisablesPermanentAddress"></textarea>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Professional Information </legend>
+        <div class="form-group">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-9">
+
+                <div class="radio">
+                    <label>
+                        <input type="radio" id="employeed" value="Employeed"
+                               name="jobtype"
+                               ng-model="Occupation" />Employeed
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" id="selfemployeed"
+                               ng-model="Occupation" name="jobtype" value="Self-Employeed" />Self-Employeed
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Contact Infromation</legend>
+        <div class="form-group">
+
+            <label for="email" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-9">
+                <input type="text" id="email" name="email"
+                       ng-model="Email" class="form-control" />
+            </div>
+            <label for="mobileno" class="col-sm-3 control-label">Mobile No.</label>
+            <div class="col-sm-9">
+                <input type="text" id="mobileno" name="mobileno"
+                       ng-model="MobileNo" class="form-control" />
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="col-sm-offset-3 col-sm-9">
+        <input type="button" class="btn btn-default" value="Cancel"
+               ng-click="cancelForm()" />
+        <input type="button" class="btn btn-primary" value="Submit"
+               ng-click="submitForm()" />
+    </div>
+
+</form>
